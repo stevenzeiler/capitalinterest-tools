@@ -7,6 +7,10 @@ import * as fs from 'fs';
 
 import { log } from  './lib/logger';
 
+import * as http from 'superagent';
+
+import { sendEmail } from './lib/mailer';
+
 require('dotenv').config();
 
 function uploadToS3(filepath) {
@@ -37,9 +41,25 @@ function uploadToS3(filepath) {
       log.info('audio.uploaded.s3', data.Location);
       log.info(data.Location);
 
+      sendEmail(data.Location);
+      notifySlack(data.Location);
+
     });
 
   });
+
+}
+
+function notifySlack(url) {
+
+  if (process.env.SLACK_URL) {
+ 
+    return http
+      .post(process.env.SLACK_URL)
+      .send({
+        text: `traktor.recording.uploaded.s3 ${url}`
+      })
+  }
 
 }
 
