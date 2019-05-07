@@ -1,0 +1,20 @@
+{
+  "name": "capitalinterest-watcher-uploader",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/node": "^12.0.0",
+    "aws-sdk": "^2.450.0",
+    "chokidar": "^3.0.0",
+    "dotenv": "^8.0.0",
+    "watchr": "^4.1.0",
+    "winston": "^3.2.1"
+  }
+}
