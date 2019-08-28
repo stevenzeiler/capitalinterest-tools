@@ -7,7 +7,14 @@ var feed = new RSS({
 
   description: 'House Music Sets',
 
-  image_url: 'https://s3.amazonaws.com/upload.zeiler.io/capital_interest.jpg'
+  image_url: 'https://s3.amazonaws.com/upload.zeiler.io/capital_interest.jpg',
+
+  custom_elements: [
+    {'itunes:author': 'Capital Z'},
+    {'itunes:category': 'Performing Arts'},
+    {'itunes:explicit': false},
+    {'itunes:language': 'english' }
+  ]
 
 });
 
