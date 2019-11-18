@@ -1,0 +1,4 @@
+.env
+bus/
+node_modules/
+db
